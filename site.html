@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Single Page</title>
+    <!-- Подключение стилей -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            padding: 1.5rem;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #4CAF50;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        #output {
+            margin-top: 15px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Interactive Page</h1>
+    </header>
+    <main>
+        <h2>About This Page</h2>
+        <p>This is an example of a single-page website with HTML, CSS, and JavaScript. Click the button below to see it in action!</p>
+        <button id="magicButton">Click Me</button>
+        <p id="output"></p>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Interactive Page</p>
+    </footer>
+
+    <!-- Подключение JavaScript -->
+    <script>
+        // Дождаться загрузки DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('magicButton');
+            const output = document.getElementById('output');
+
+            // Обработчик нажатия на кнопку
+            button.addEventListener('click', () => {
+                const now = new Date();
+                const message = `Button clicked! Current time is: ${now.toLocaleTimeString()}`;
+                output.textContent = message;
+                console.log(message); // Вывод в консоль
+            });
+        });
+    </script>
+</body>
+</html>
+
